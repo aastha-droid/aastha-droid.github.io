@@ -1,37 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tasfia Aastha | CSE Student, Developer & Artist in Dhaka</title>
-  <meta name="description" content="Tasfia Aastha is a CSE student at ULAB in Dhaka, Bangladesh. Emerging developer, graphic designer, and artist.">
-  <style>
-    body { font-family: Arial, sans-serif; background: #0f1220; color: #eef; max-width: 640px; margin: 0 auto; padding: 40px 20px; line-height: 1.6; }
-    h1 { margin-bottom: 4px; }
-    h2 { margin-top: 32px; color: #9ec9ff; }
-    a { color: #9ec9ff; }
-    ul { padding-left: 20px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasfia Aastha | Developer, Graphic Designer and Artist in Dhaka</title>
+<meta name="description" content="Tasfia Aastha is a CSE student at the University of Liberal Arts Bangladesh (ULAB) in Dhaka, an emerging developer, graphic designer and artist.">
+<style>
+  :root {
+    --space:#07030f;
+    --card:rgba(24,12,50,.72);
+    --line:rgba(167,139,250,.28);
+    --purple:#a78bfa;
+    --pink:#f0abfc;
+    --soft:#e9e0ff;
+    --text:#f5f0ff;
+  }
+  * { box-sizing:border-box; }
+  html { background:var(--space); }
+  body {
+    margin:0; min-height:100vh; color:var(--text); line-height:1.7;
+    font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(192,132,252,.35), transparent 55%),
+      radial-gradient(ellipse at 90% 40%, rgba(124,58,237,.22), transparent 50%),
+      radial-gradient(ellipse at 5% 75%, rgba(217,70,239,.16), transparent 50%),
+      var(--space);
+    background-attachment:fixed;
+    overflow-x:hidden;
+  }
+  .stars, .stars2 {
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-repeat:repeat;
+  }
+  .stars {
+    background-image:
+      radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+      radial-gradient(1px 1px at 90px 120px, #e9d5ff, transparent),
+      radial-gradient(1.5px 1.5px at 160px 60px, #fff, transparent),
+      radial-gradient(1px 1px at 230px 180px, #f5d0fe, transparent),
+      radial-gradient(1px 1px at 60px 210px, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 280px 90px, #ddd6fe, transparent);
+    background-size:300px 240px;
+    animation:twinkle 5s ease-in-out infinite alternate;
+  }
+  .stars2 {
+    background-image:
+      radial-gradient(1px 1px at 40px 80px, #fff, transparent),
+      radial-gradient(2px 2px at 140px 150px, #c4b5fd, transparent),
+      radial-gradient(1px 1px at 210px 20px, #fff, transparent),
+      radial-gradient(1px 1px at 120px 230px, #f0abfc, transparent);
+    background-size:260px 260px;
+    animation:twinkle 7s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes twinkle { from { opacity:.45; } to { opacity:1; } }
+  @keyframes pulse { 0%,100% { transform:translateX(-50%) scale(1); opacity:.9; } 50% { transform:translateX(-50%) scale(1.12); opacity:1; } }
+
+  .wrap { position:relative; z-index:1; max-width:760px; margin:0 auto; padding:56px 20px 60px; }
+
+  header { position:relative; text-align:center; padding:30px 0 34px; }
+  .nova {
+    position:absolute; left:50%; top:-10px; width:340px; height:340px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(255,255,255,.95) 0 3%, rgba(240,171,252,.75) 8%, rgba(167,139,250,.38) 26%, rgba(124,58,237,.14) 48%, transparent 68%);
+    filter:blur(6px); z-index:-1; animation:pulse 6s ease-in-out infinite;
+  }
+  h1 {
+    font-size:clamp(2.2rem, 9vw, 3.2rem); margin:0 0 10px; letter-spacing:.5px;
+    background:linear-gradient(90deg,#fff,#e9d5ff 40%,#f0abfc);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 0 30px rgba(192,132,252,.4);
+  }
+  .tag { color:var(--soft); font-size:1.05rem; margin:0 auto; max-width:560px; }
+
+  section {
+    background:var(--card); border:1px solid var(--line); border-radius:18px;
+    padding:22px; margin-bottom:20px; backdrop-filter:blur(6px);
+    box-shadow:0 0 30px rgba(124,58,237,.12);
+  }
+  h2 { color:var(--pink); margin:0 0 12px; font-size:1.35rem; letter-spacing:.4px; }
+  p { margin:0 0 12px; }
+  p:last-child { margin-bottom:0; }
+  a { color:var(--purple); text-underline-offset:3px; }
+  a:hover { color:var(--pink); }
+  ul { padding-left:20px; margin:0; }
+  li { margin-bottom:10px; }
+  li:last-child { margin-bottom:0; }
+  strong { color:var(--soft); }
+
+  .links { display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none; }
+  .links li { margin:0; }
+  .links a {
+    display:inline-block; padding:8px 16px; border-radius:999px; text-decoration:none;
+    border:1px solid var(--line); background:rgba(124,58,237,.18); color:var(--soft);
+  }
+  .links a:hover { background:rgba(192,132,252,.35); color:#fff; }
+
+  footer { text-align:center; color:#9d8ccc; font-size:.9rem; margin-top:30px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stars, .stars2, .nova { animation:none; }
+  }
+</style>
 </head>
 <body>
-  <h1>Tasfia Aastha</h1>
-  <p>CSE student at the University of Liberal Arts Bangladesh (ULAB) in Dhaka. Emerging developer, graphic designer, and artist.</p>
+<div class="stars"></div>
+<div class="stars2"></div>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://radiant-selkie-d7bd4e.netlify.app">Keystone</a>: an AI hobby planner for beginners, built for the Ostad YUNet AIgnite Buildathon 2026.</li>
-    <li><a href="https://orbit-split-aastha.netlify.app/">Orbit Split</a>: an AI bill splitter, built for the PayPal AI Hackathon.</li>
-    <li><a href="https://majestic-sunflower-9046a9.netlify.app">Arete</a>: a YouTube playlist tracker.</li>
-  </ul>
+<div class="wrap">
 
-  <h2>Art</h2>
-  <p>Enceladus is my art brand. <a href="https://instagram.com/enceladus_nyx">Follow it on Instagram</a>.</p>
+  <header>
+    <div class="nova"></div>
+    <h1>Tasfia Aastha</h1>
+    <p class="tag">CSE student at the University of Liberal Arts Bangladesh (ULAB) in Dhaka. Emerging developer, graphic designer and artist.</p>
+  </header>
 
-  <h2>Find me online</h2>
-  <ul>
-    <li><a href="https://github.com/aastha-droid">GitHub</a></li>
-    <li><a href="https://devpost.com/tasfia-aastha">Devpost</a></li>
-    <li><a href="https://linkedin.com/in/tasfia-aastha">LinkedIn</a></li>
-  </ul>
+  <section>
+    <h2>About</h2>
+    <p>I'm a CSE student at ULAB in Dhaka. I like building things that sit somewhere between code, hardware and art.</p>
+    <p>I've been drawing for as long as I can remember, and the rest I picked up on my own. I build AI web apps, design wheels for a line follower robot, work on FPGA and digital logic with VHDL, and make hand-painted acrylics, pencil and ink drawings, and clay figures. I also stream games as Aastha Respawns and take part in as many hackathons as I can.</p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://orbit-split-aastha.netlify.app/">Orbit Split</a>: type a bill in plain words and Gemini splits it. Everyone pays through PayPal sandbox, and a rocket launches when the last person pays. Built for the PayPal AI Hackathon.</li>
+      <li><a href="https://radiant-selkie-d7bd4e.netlify.app">Keystone</a>: an AI hobby planner that tells beginners what to buy before they start, so they don't waste money. Built solo for the Ostad YUNet AIgnite Buildathon 2026.</li>
+      <li><a href="https://majestic-sunflower-9046a9.netlify.app">Arete</a>: a YouTube course tracker where each course orbits as a planet around your progress.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I'm building and learning</h2>
+    <ul>
+      <li><strong>Building:</strong> a Finance Tracker for logging income and expenses, and the Enceladus art portfolio site.</li>
+      <li><strong>Learning:</strong> front-end web development (HTML, CSS, JavaScript), robotics with a line follower robot and wheel design in FreeCAD, and digital logic and FPGA with VHDL.</li>
+      <li><strong>Tech I use:</strong> Java, C, Python, HTML, CSS, JavaScript, Gemini API, Netlify, Git, ESP32, Arduino, KiCad, Canva and Clip Studio Paint.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Art</h2>
+    <p>Enceladus is my art brand: pencil and ink drawings, hand-painted acrylics, digital art and clay figures. <a href="https://instagram.com/enceladus_nyx">Follow it on Instagram</a>.</p>
+  </section>
+
+  <section>
+    <h2>Find me online</h2>
+    <ul class="links">
+      <li><a href="https://github.com/aastha-droid">GitHub</a></li>
+      <li><a href="https://devpost.com/tasfia-aastha">Devpost</a></li>
+      <li><a href="https://linkedin.com/in/tasfia-aastha">LinkedIn</a></li>
+      <li><a href="https://youtube.com/@enchantress.1">YouTube</a></li>
+      <li><a href="https://twitch.tv/enchvntrss">Twitch</a></li>
+      <li><a href="https://instagram.com/enceladus_nyx">Enceladus</a></li>
+    </ul>
+  </section>
+
+  <footer>&copy; Tasfia Aastha, Dhaka, Bangladesh</footer>
+</div>
 </body>
 </html>
